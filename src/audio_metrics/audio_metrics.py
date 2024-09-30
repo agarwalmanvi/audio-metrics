@@ -92,6 +92,9 @@ class AudioMetrics:
         #     if key in state:
         #         setattr(self, key, state[key])
 
+    def __getstate__(self):
+        return self.__dict__
+
     def set_background_data(self, source):
         self.bg_data = self.load_metric_input_data(source)
 
